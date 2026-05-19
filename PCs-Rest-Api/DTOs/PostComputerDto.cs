@@ -1,14 +1,11 @@
-namespace PCs_Rest_Api.Entities;
+namespace PCs_Rest_Api.DTOs;
 
-public class Computer {
-
-    public int Id { get; set; }
+public class PostComputerDto {
+    
     public string Name { get; set; } = String.Empty;
     public float Weight { get; set; }
     public int Warranty { get; set; }
     public DateTime CreatedAt { get; set; }
     public int Stock { get; set; }
-
-    public ICollection<ComputerComponent> ComputerComponents { get; set; } = [];
-
+    
 }

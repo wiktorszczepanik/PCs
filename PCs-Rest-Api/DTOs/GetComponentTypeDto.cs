@@ -1,11 +1,8 @@
-namespace PCs_Rest_Api.Entities;
+namespace PCs_Rest_Api.DTOs;
 
-public class ComponentType {
+public class GetComponentTypeDto {
     
     public int Id { get; set; }
     public string Abbreviation { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-
-    public ICollection<Component> Components { get; set; } = [];
-
 }
