@@ -25,7 +25,37 @@ public class ComputerService : IComputerService {
         return computers;
     }
 
-    public async Task DeleteComputer(int id) {
+    public async Task<GetComputerWithComponentsDto> GetComputerWithComponentsById(int id) {
+        var computer = await _context.Computers
+            .Where(computer => computer.Id == id)
+            .Select(computer => new GetComputerWithComponentsDto() {
+                Id = computer.Id,
+                Name = computer.Name,
+                Weight = computer.Weight,
+                Warranty = computer.Warranty,
+                CreatedAt = computer.CreatedAt,
+                Stock = computer.Stock,
+                Components = computer.ComputerComponents.Select(component => new GetComponentDto() {
+                    Code = component.Component.Code,
+                    Name = component.Component.Code,
+                    Description = component.Component.Description,
+                    Manufacturer = new GetComponentManufacturerDto() {
+                        Id = component.Component.ComponentManufacturer.Id,
+                        Abbreviation = component.Component.ComponentManufacturer.Abbreviation,
+                        FullName = component.Component.ComponentManufacturer.FullName,
+                        FoundationDate = component.Component.ComponentManufacturer.FoundationDate
+                    },
+                    Type = new GetComponentTypeDto() {
+                        Id = component.Component.ComponentType.Id,
+                        Abbreviation = component.Component.ComponentType.Abbreviation,
+                        Name = component.Component.ComponentType.Name
+                    }
+                }).ToList()
+            }).FirstOrDefaultAsync();
+        return computer;
+    }
+
+    public async Task RemoveComputer(int id) {
         var computer = await _context.Computers.FindAsync(id);
         if (computer == null) throw new NotFoundException();
         _context.Remove(computer);

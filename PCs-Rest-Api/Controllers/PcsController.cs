@@ -22,11 +22,13 @@ public class PcsController : ControllerBase {
         var computers = await _computerService.GetAllComputers();
         return Ok(computers);
     }
+    
+    //TODO
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id) {
         try {
-            await _computerService.DeleteComputer(id);
+            await _computerService.RemoveComputer(id);
             return NoContent();
         }
         catch (NotFoundException exception) {

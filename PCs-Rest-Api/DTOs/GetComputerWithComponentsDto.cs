@@ -8,6 +8,6 @@ public class GetComputerWithComponentsDto {
     public int Warranty { get; set; }
     public DateTime CreatedAt { get; set; }
     public int Stock { get; set; }
-    public List<GetComponentDto> components;
+    public IEnumerable<GetComponentDto> Components { get; set; } = [];
 
 }

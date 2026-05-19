@@ -5,9 +5,9 @@ namespace PCs_Rest_Api.Services;
 public interface IComputerService {
 
     Task<IEnumerable<GetComputerDto>> GetAllComputers();
-    // Task<GetComputerWithComponentsDto> GetComputerWithComponentsById(int id);
+    Task<GetComputerWithComponentsDto> GetComputerWithComponentsById(int id);
     // Task<GetComputerDto> CreateComputer(PostComputerDto postComputerDto);
     // Task<IEnumerable<GetComputerDto>> UpdateComputerInfoById();
-    Task DeleteComputer(int id);
+    Task RemoveComputer(int id);
     
 }
