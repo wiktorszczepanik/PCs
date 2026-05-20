@@ -53,27 +53,35 @@ namespace PCs_Rest_Api.Migrations
                     b.HasData(
                         new
                         {
-                            Code = "A",
+                            Code = "RAM0000001",
                             ComponentManufacturerId = 1,
                             ComponentTypeId = 1,
                             Description = "8GB DDR4 3200MHz",
-                            Name = "RAM"
+                            Name = "Corsair Vengeance"
                         },
                         new
                         {
-                            Code = "B",
+                            Code = "SSD0000001",
                             ComponentManufacturerId = 2,
                             ComponentTypeId = 2,
                             Description = "500GB NVMe M.2 PCIe Gen3",
-                            Name = "SSD"
+                            Name = "Samsung SSD"
                         },
                         new
                         {
-                            Code = "C",
+                            Code = "GPU0000001",
                             ComponentManufacturerId = 3,
                             ComponentTypeId = 3,
                             Description = "4GB VRAM",
-                            Name = "GPU"
+                            Name = "RTX 4080 Super"
+                        },
+                        new
+                        {
+                            Code = "CPU0000001",
+                            ComponentManufacturerId = 4,
+                            ComponentTypeId = 4,
+                            Description = "4 Cores 8 Threads 4.20 GHz ",
+                            Name = "Intel Core i5"
                         });
                 });
 
@@ -121,8 +129,15 @@ namespace PCs_Rest_Api.Migrations
                         {
                             Id = 3,
                             Abbreviation = "NVD",
-                            FoundationDate = new DateOnly(1993, 4, 5),
+                            FoundationDate = new DateOnly(1938, 4, 5),
                             FullName = "NVIDIA Corporation"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Abbreviation = "INT",
+                            FoundationDate = new DateOnly(1968, 7, 18),
+                            FullName = "Intel Corporation"
                         });
                 });
 
@@ -166,6 +181,12 @@ namespace PCs_Rest_Api.Migrations
                             Id = 3,
                             Abbreviation = "GPU",
                             Name = "Graphics Card"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Abbreviation = "CPU",
+                            Name = "Central Processing Unit"
                         });
                 });
 
@@ -204,7 +225,7 @@ namespace PCs_Rest_Api.Migrations
                         {
                             Id = 1,
                             CreatedAt = new DateTime(2026, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Asus",
+                            Name = "Asus TUF Gaming",
                             Stock = 10,
                             Warranty = 1,
                             Weight = 2.2000000476837158
@@ -213,19 +234,19 @@ namespace PCs_Rest_Api.Migrations
                         {
                             Id = 2,
                             CreatedAt = new DateTime(2026, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Dell",
+                            Name = "Dell Alienware",
                             Stock = 5,
                             Warranty = 2,
-                            Weight = 3.0999999046325684
+                            Weight = 2.5
                         },
                         new
                         {
                             Id = 3,
                             CreatedAt = new DateTime(2026, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lenovo",
+                            Name = "Lenovo ThinkPad",
                             Stock = 12,
                             Warranty = 3,
-                            Weight = 2.5
+                            Weight = 2.7000000476837158
                         });
                 });
 
@@ -250,19 +271,73 @@ namespace PCs_Rest_Api.Migrations
                         new
                         {
                             ComputerId = 1,
-                            ComponentCode = "A",
+                            ComponentCode = "RAM0000001",
+                            Amount = 4
+                        },
+                        new
+                        {
+                            ComputerId = 1,
+                            ComponentCode = "SSD0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 1,
+                            ComponentCode = "GPU0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 1,
+                            ComponentCode = "CPU0000001",
                             Amount = 1
                         },
                         new
                         {
                             ComputerId = 2,
-                            ComponentCode = "B",
+                            ComponentCode = "RAM0000001",
+                            Amount = 2
+                        },
+                        new
+                        {
+                            ComputerId = 2,
+                            ComponentCode = "SSD0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 2,
+                            ComponentCode = "GPU0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 2,
+                            ComponentCode = "CPU0000001",
                             Amount = 1
                         },
                         new
                         {
                             ComputerId = 3,
-                            ComponentCode = "C",
+                            ComponentCode = "RAM0000001",
+                            Amount = 4
+                        },
+                        new
+                        {
+                            ComputerId = 3,
+                            ComponentCode = "SSD0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 3,
+                            ComponentCode = "GPU0000001",
+                            Amount = 1
+                        },
+                        new
+                        {
+                            ComputerId = 3,
+                            ComponentCode = "CPU0000001",
                             Amount = 1
                         });
                 });

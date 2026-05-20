@@ -23,9 +23,20 @@ public class ComputerComponentConfiguration : IEntityTypeConfiguration<ComputerC
 
     private static void SeedData(EntityTypeBuilder<ComputerComponent> builder) {
         builder.HasData(new List<ComputerComponent> {
-            new() { ComputerId = 1, ComponentCode = "A", Amount = 1 },
-            new() { ComputerId = 2, ComponentCode = "B", Amount = 1 },
-            new() { ComputerId = 3, ComponentCode = "C", Amount = 1 }
+            new() { ComputerId = 1, ComponentCode = "RAM0000001", Amount = 4 },
+            new() { ComputerId = 1, ComponentCode = "SSD0000001", Amount = 1 },
+            new() { ComputerId = 1, ComponentCode = "GPU0000001", Amount = 1 },
+            new() { ComputerId = 1, ComponentCode = "CPU0000001", Amount = 1 },
+            
+            new() { ComputerId = 2, ComponentCode = "RAM0000001", Amount = 2 },
+            new() { ComputerId = 2, ComponentCode = "SSD0000001", Amount = 1 },
+            new() { ComputerId = 2, ComponentCode = "GPU0000001", Amount = 1 },
+            new() { ComputerId = 2, ComponentCode = "CPU0000001", Amount = 1 },
+            
+            new() { ComputerId = 3, ComponentCode = "RAM0000001", Amount = 4 },
+            new() { ComputerId = 3, ComponentCode = "SSD0000001", Amount = 1 },
+            new() { ComputerId = 3, ComponentCode = "GPU0000001", Amount = 1 },
+            new() { ComputerId = 3, ComponentCode = "CPU0000001", Amount = 1 }
         });
     }
     

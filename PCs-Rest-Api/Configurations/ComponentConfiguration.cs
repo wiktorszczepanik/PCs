@@ -27,9 +27,10 @@ public class ComponentConfiguration : IEntityTypeConfiguration<Component> {
 
     private static void SeedData(EntityTypeBuilder<Component> builder) {
         builder.HasData(new List<Component>() {
-            new() { Code = "A", Name = "RAM", Description = "8GB DDR4 3200MHz", ComponentTypeId = 1, ComponentManufacturerId = 1 },
-            new() { Code = "B", Name = "SSD", Description = "500GB NVMe M.2 PCIe Gen3", ComponentTypeId = 2, ComponentManufacturerId = 2 },
-            new() { Code = "C", Name = "GPU", Description = "4GB VRAM", ComponentTypeId = 3, ComponentManufacturerId = 3 }
+            new() { Code = "RAM0000001", Name = "Corsair Vengeance", Description = "8GB DDR4 3200MHz", ComponentTypeId = 1, ComponentManufacturerId = 1 },
+            new() { Code = "SSD0000001", Name = "Samsung SSD", Description = "500GB NVMe M.2 PCIe Gen3", ComponentTypeId = 2, ComponentManufacturerId = 2 },
+            new() { Code = "GPU0000001", Name = "RTX 4080 Super", Description = "4GB VRAM", ComponentTypeId = 3, ComponentManufacturerId = 3 },
+            new() { Code = "CPU0000001", Name = "Intel Core i5", Description = "4 Cores 8 Threads 4.20 GHz ", ComponentTypeId = 4, ComponentManufacturerId = 4 }
         });
     }
     

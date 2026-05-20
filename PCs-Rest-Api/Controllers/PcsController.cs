@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PCs_Rest_Api.Data;
+using PCs_Rest_Api.DTOs;
 using PCs_Rest_Api.Entities;
 using PCs_Rest_Api.Exceptions;
 using PCs_Rest_Api.Services;
@@ -23,7 +24,28 @@ public class PcsController : ControllerBase {
         return Ok(computers);
     }
     
-    //TODO
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetComputerById(int id) {
+        var computers = await _computerService.GetComputerWithComponentsById(id);
+        return Ok(computers);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateComputer(PostComputerDto postComputerDto) {
+        await _computerService.CreateComputer(postComputerDto);
+        return Created();
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateComputer(int id, PostComputerDto postComputerDto) {
+        try {
+            await _computerService.ReplaceComputerInfoById(id, postComputerDto);
+            return Ok();
+        }
+        catch (NotFoundException exception) {
+            return NotFound(exception.Message);
+        }
+    }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id) {

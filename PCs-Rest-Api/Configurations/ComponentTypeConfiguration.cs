@@ -18,7 +18,8 @@ public class ComponentTypeConfiguration : IEntityTypeConfiguration<ComponentType
         builder.HasData(new List<ComponentType> {
             new() { Id = 1, Abbreviation = "RAM", Name = "Memory (RAM)" },
             new() { Id = 2, Abbreviation = "SSD", Name = "Solid State Drive" },
-            new() { Id = 3, Abbreviation = "GPU", Name = "Graphics Card" }
+            new() { Id = 3, Abbreviation = "GPU", Name = "Graphics Card" },
+            new() { Id = 4, Abbreviation = "CPU", Name = "Central Processing Unit" }
         });
     }
     

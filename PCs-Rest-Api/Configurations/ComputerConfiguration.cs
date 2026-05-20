@@ -19,9 +19,9 @@ public class ComputerConfiguration : IEntityTypeConfiguration<Computer> {
 
     private static void SeedData(EntityTypeBuilder<Computer> builder) {
         builder.HasData(new List<Computer> {
-            new() { Id = 1, Name = "Asus", Weight = 2.2f, Warranty = 1, CreatedAt = new DateTime(2026, 2, 1), Stock = 10},
-            new() { Id = 2, Name = "Dell",  Weight = 3.1f, Warranty = 2, CreatedAt = new DateTime(2026, 3, 1),  Stock = 5  },
-            new() { Id = 3, Name = "Lenovo", Weight = 2.5f, Warranty = 3, CreatedAt = new DateTime(2026, 4, 1), Stock = 12 }
+            new() { Id = 1, Name = "Asus TUF Gaming", Weight = 2.2f, Warranty = 1, CreatedAt = new DateTime(2026, 2, 1), Stock = 10},
+            new() { Id = 2, Name = "Dell Alienware",  Weight = 2.5f, Warranty = 2, CreatedAt = new DateTime(2026, 3, 1),  Stock = 5  },
+            new() { Id = 3, Name = "Lenovo ThinkPad", Weight = 2.7f, Warranty = 3, CreatedAt = new DateTime(2026, 4, 1), Stock = 12 }
         });
     }
     

@@ -19,7 +19,8 @@ public class ComponentManufacturerConfiguration : IEntityTypeConfiguration<Compo
         builder.HasData(new List<ComponentManufacturer> {
             new() {Id = 1, Abbreviation = "CRU", FullName = "Crucial Technology", FoundationDate = new DateOnly(1996, 1, 1)},
             new() {Id = 2, Abbreviation = "SND", FullName = "Samsung Electronics", FoundationDate = new DateOnly(1938, 3, 1)},
-            new() {Id = 3, Abbreviation = "NVD", FullName = "NVIDIA Corporation", FoundationDate = new DateOnly(1993, 4, 5)}
+            new() {Id = 3, Abbreviation = "NVD", FullName = "NVIDIA Corporation", FoundationDate = new DateOnly(1938, 4, 5)},
+            new() {Id = 4, Abbreviation = "INT", FullName = "Intel Corporation", FoundationDate = new DateOnly(1968, 7, 18)}
         });
     }
 }
