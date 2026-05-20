@@ -53,7 +53,7 @@ public class ComputerService : IComputerService {
                     }
                 }).ToList()
             }).FirstOrDefaultAsync();
-        return computer;
+        return computer ?? throw new NotFoundException();
     }
 
     public async Task<GetComputerDto> CreateComputer(PostComputerDto postComputerDto) {

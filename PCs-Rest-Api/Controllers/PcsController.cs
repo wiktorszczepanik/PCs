@@ -24,10 +24,15 @@ public class PcsController : ControllerBase {
         return Ok(computers);
     }
     
-    [HttpGet("{id}")]
+    [HttpGet("{id}/components")]
     public async Task<IActionResult> GetComputerById(int id) {
-        var computers = await _computerService.GetComputerWithComponentsById(id);
-        return Ok(computers);
+        try {
+            var computers = await _computerService.GetComputerWithComponentsById(id);
+            return Ok(computers);
+        }
+        catch (NotFoundException exception) {
+            return NotFound(exception.Message);
+        }
     }
 
     [HttpPost]
