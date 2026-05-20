@@ -56,7 +56,7 @@ public class ComputerService : IComputerService {
         return computer;
     }
 
-    public async Task CreateComputer(PostComputerDto postComputerDto) {
+    public async Task<GetComputerDto> CreateComputer(PostComputerDto postComputerDto) {
         var newComputer = new Computer() {
             Name = postComputerDto.Name,
             Weight = postComputerDto.Weight,
@@ -66,6 +66,14 @@ public class ComputerService : IComputerService {
         };
         await _context.AddAsync(newComputer);
         await _context.SaveChangesAsync();
+        return new GetComputerDto() {
+            Id = newComputer.Id,
+            Name = newComputer.Name,
+            Weight = newComputer.Weight,
+            Warranty = newComputer.Warranty,
+            CreatedAt = newComputer.CreatedAt,
+            Stock = newComputer.Stock
+        };
     }
 
     public async Task ReplaceComputerInfoById(int id, PostComputerDto postComputerDto) {
